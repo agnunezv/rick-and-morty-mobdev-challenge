@@ -20,10 +20,6 @@ public class CharacterController {
     @GetMapping("/character/{characterId}")
     public Mono<ResponseEntity<Character>> getCharacter(@PathVariable int characterId) {
         return characterReadService.getCharacter(characterId)
-                .map(ResponseEntity::ok)
-                .onErrorResume(e -> {
-                    System.err.println("Error fetching character: " + e.getMessage());
-                    return Mono.just(ResponseEntity.status(500).body(null));
-                });
+                .map(ResponseEntity::ok);
     }
 }
