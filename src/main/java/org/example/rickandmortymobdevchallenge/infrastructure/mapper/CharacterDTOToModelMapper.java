@@ -2,7 +2,6 @@ package org.example.rickandmortymobdevchallenge.infrastructure.mapper;
 
 
 import org.example.rickandmortymobdevchallenge.application.dto.CharacterResponseDTO;
-import org.example.rickandmortymobdevchallenge.application.dto.OriginDTO;
 import org.example.rickandmortymobdevchallenge.application.dto.OriginResponseDTO;
 import org.example.rickandmortymobdevchallenge.domain.model.Character;
 

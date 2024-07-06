@@ -1,7 +1,6 @@
 package org.example.rickandmortymobdevchallenge.domain.service;
 
 import org.example.rickandmortymobdevchallenge.application.dto.CharacterResponseDTO;
-import org.example.rickandmortymobdevchallenge.application.dto.OriginResponseDTO;
 import org.example.rickandmortymobdevchallenge.application.usecase.CharacterReadService;
 import org.example.rickandmortymobdevchallenge.application.usecase.OriginReadService;
 import org.example.rickandmortymobdevchallenge.domain.model.Character;
