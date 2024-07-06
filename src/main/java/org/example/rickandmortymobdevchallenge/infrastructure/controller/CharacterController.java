@@ -1,21 +1,29 @@
 package org.example.rickandmortymobdevchallenge.infrastructure.controller;
 
-import org.example.rickandmortymobdevchallenge.application.dto.CharacterDTO;
-import org.example.rickandmortymobdevchallenge.domain.service.CharacterService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.example.rickandmortymobdevchallenge.application.usecase.CharacterReadService;
+import org.example.rickandmortymobdevchallenge.domain.model.Character;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
 
 @RestController
 public class CharacterController {
 
-    @Autowired
-    private CharacterService characterService;
+    private final CharacterReadService characterReadService;
 
-    @GetMapping("/character/{character-id}")
-    public ResponseEntity<CharacterDTO> getCharacterCustomResponse(@PathVariable("character-id") int characterId) {
-        return ResponseEntity.ok(characterService.getCharacter(characterId).block());
+    public CharacterController(CharacterReadService characterReadService) {
+        this.characterReadService = characterReadService;
+    }
+
+    @GetMapping("/character/{characterId}")
+    public Mono<ResponseEntity<Character>> getCharacter(@PathVariable int characterId) {
+        return characterReadService.getCharacter(characterId)
+                .map(ResponseEntity::ok)
+                .onErrorResume(e -> {
+                    System.err.println("Error fetching character: " + e.getMessage());
+                    return Mono.just(ResponseEntity.status(500).body(null));
+                });
     }
 }
