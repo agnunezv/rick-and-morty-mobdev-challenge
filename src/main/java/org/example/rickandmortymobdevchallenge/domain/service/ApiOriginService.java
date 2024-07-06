@@ -26,9 +26,8 @@ public class ApiOriginService implements OriginReadService {
     public Mono<OriginResponseDTO> getOrigin(String originUrl) {
 
         if (originUrl == null || originUrl.isEmpty()) {
-            OriginResponseDTO emptyOrigin = new OriginResponseDTO(Strings.EMPTY, List.of());
             LOGGER.warn("Origin URL is empty, returning default OriginResponseDTO with empty values.");
-            return Mono.just(emptyOrigin);
+            return Mono.just(new OriginResponseDTO(Strings.EMPTY, List.of()));
         }
 
         return webClient.get()

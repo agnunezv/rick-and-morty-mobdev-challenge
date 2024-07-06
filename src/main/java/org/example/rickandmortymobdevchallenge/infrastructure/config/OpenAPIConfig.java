@@ -6,14 +6,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class OpenAIConfig {
+public class OpenAPIConfig {
 
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Tu API")
+                        .title("Rick & Morty Mobdev Challenge")
                         .version("1.0.0")
-                        .description("Descripción de tu API"));
+                        .description("Documentation for all endpoints related to Rick & Morty Mobdev Challenge."));
     }
 }
