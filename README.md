@@ -31,8 +31,8 @@ The application follows a clean and modular architecture, organized into the fol
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/rick-and-morty-api-integration.git
-   cd rick-and-morty-api-integration
+   git clone https://github.com/your-username/rick-and-morty-mobdev-challenge.git
+   cd rick-and-morty-mobdev-challenge
 
 2. Build and run the application:
    ```sh
