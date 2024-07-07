@@ -18,6 +18,19 @@ public class Character {
 
     private Origin origin;
 
+    public Character() {
+    }
+
+    public Character(int id, String name, String status, String species, String type, int episodeCount, Origin origin) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+        this.species = species;
+        this.type = type;
+        this.episodeCount = episodeCount;
+        this.origin = origin;
+    }
+
     public int getId() {
         return id;
     }
@@ -83,6 +96,16 @@ public class Character {
         private String dimension;
 
         private List<String> residents;
+
+        public Origin() {
+        }
+
+        public Origin(String name, String url, String dimension, List<String> residents) {
+            this.name = name;
+            this.url = url;
+            this.dimension = dimension;
+            this.residents = residents;
+        }
 
         public String getName() {
             return name;

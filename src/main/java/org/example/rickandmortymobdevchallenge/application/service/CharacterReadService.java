@@ -1,4 +1,4 @@
-package org.example.rickandmortymobdevchallenge.application.usecase;
+package org.example.rickandmortymobdevchallenge.application.service;
 
 import org.example.rickandmortymobdevchallenge.domain.model.Character;
 import reactor.core.publisher.Mono;

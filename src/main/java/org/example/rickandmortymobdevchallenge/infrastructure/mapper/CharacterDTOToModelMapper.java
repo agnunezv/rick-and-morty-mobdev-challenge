@@ -1,10 +1,12 @@
 package org.example.rickandmortymobdevchallenge.infrastructure.mapper;
 
 
+import org.apache.logging.log4j.util.Strings;
 import org.example.rickandmortymobdevchallenge.application.dto.CharacterResponseDTO;
 import org.example.rickandmortymobdevchallenge.application.dto.OriginResponseDTO;
 import org.example.rickandmortymobdevchallenge.domain.model.Character;
 
+import java.util.List;
 import java.util.function.BiFunction;
 
 public class CharacterDTOToModelMapper implements BiFunction<CharacterResponseDTO, OriginResponseDTO, Character> {
@@ -22,8 +24,8 @@ public class CharacterDTOToModelMapper implements BiFunction<CharacterResponseDT
         Character.Origin origin = new Character.Origin();
         origin.setName(characterResponseDTO.origin().name());
         origin.setUrl(characterResponseDTO.origin().url());
-        origin.setDimension(originResponseDTO.dimension());
-        origin.setResidents(originResponseDTO.residents());
+        origin.setDimension(originResponseDTO != null ? originResponseDTO.dimension() : Strings.EMPTY);
+        origin.setResidents(originResponseDTO != null ? originResponseDTO.residents() : List.of());
 
         character.setOrigin(origin);
         return character;

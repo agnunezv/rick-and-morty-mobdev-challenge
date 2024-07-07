@@ -2,7 +2,7 @@ package org.example.rickandmortymobdevchallenge.infrastructure.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.example.rickandmortymobdevchallenge.application.usecase.CharacterReadService;
+import org.example.rickandmortymobdevchallenge.application.service.CharacterReadService;
 import org.example.rickandmortymobdevchallenge.domain.model.Character;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

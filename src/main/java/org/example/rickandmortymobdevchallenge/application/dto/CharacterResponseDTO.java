@@ -17,4 +17,11 @@ public record CharacterResponseDTO(
         List<String> episode,
 
         OriginDTO origin) {
+
+    public record OriginDTO(
+
+            String name,
+
+            String url) {
+    }
 }
